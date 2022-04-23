@@ -18,7 +18,7 @@ class Item(db.Model):
     price = db.Column(db.Numeric(9, 2))
     created = db.Column(db.DateTime, default=datetime.utcnow)
     brand_id = db.Column(db.Integer, db.ForeignKey('brand.id'))
-    user_items = db.relationship('UserItem', backref='item')
+    user_items = db.relationship('UsersItem', backref='item')
 
     def __repr__(self):
         return self.title
@@ -26,7 +26,7 @@ class Item(db.Model):
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250))
-    user_items = db.relationship('UserItem', backref='user', cascade='all,delete')
+    user_items = db.relationship('UsersItem', backref='user', cascade='all,delete')
 
     def __repr__(self):
         return self.title
