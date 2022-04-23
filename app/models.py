@@ -32,7 +32,7 @@ class User(db.Model):
         return self.title
 
 
-class UserItem(db.Model):
+class UsersItem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     item_id = db.Column(db.Integer, db.ForeignKey('item.id'))
