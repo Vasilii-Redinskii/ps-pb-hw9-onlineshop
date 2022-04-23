@@ -1,0 +1,16 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет магазин Onlineshop</title>
+</head>
+
+<body>
+<ul>
+    {% for brand in brands_list %}
+    <li>Бренд: <a href="/brand-update/{{ brand.id }}">{{ brand.title }}</a></li>
+    {% endfor %}
+</ul>
+</body>
+
+</html>
